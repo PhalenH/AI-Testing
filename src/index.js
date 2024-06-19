@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
+const PORT = 3001
+const express = require('express')
+const cors = require('cors')
+const application = express()
+application.use(express.json())
+application.use(cors())
+
+application.listen(PORT => console.log('Testing server port ' + PORT))
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
